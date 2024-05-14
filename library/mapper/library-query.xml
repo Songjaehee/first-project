@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+    <comment />
+    <entry key="libraryFindByTitle">
+        SELECT
+            *
+        FROM book_list
+        WHERE book_inventory = 1 AND book_title = ?
+    </entry>
+
+    <entry key="libraryRentalService">
+
+        SELECT
+        *
+        FROM book_list
+        WHERE book_title = ?
+        UPDATE book_inventory = 0
+
+    </entry>
+
+    <entry key="libraryReturnService">
+        SELECT
+        *
+        FROM book_list
+        WHERE book_title = ?
+        UPDATE book_inventory = 1
+
+    </entry>
+
+</properties>
